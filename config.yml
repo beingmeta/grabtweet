@@ -1,0 +1,7 @@
+twitter_consumer_key: '000-secret'
+twitter_consumer_secret: '000-secret'
+twitter_access_token: 'abcde-secret'
+twitter_access_secret: 'abcde-secret'
+aws_tweetstream_key: 'ABCD-secret'
+aws_tweetstream_secret: 'abcd-secret'
+
