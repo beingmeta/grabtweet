@@ -1,5 +1,7 @@
-# Overview
+# grabtweet
+Tool for grabbing tweets and feeding them into processing queues
 
+## Overview
 This script listens to tweets and captures them into a DynamoDB database.
 It uses the `tweepy` library; it's a python Twitter client.
 
