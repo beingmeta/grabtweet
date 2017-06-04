@@ -13,7 +13,8 @@ from credentials import twitter_auth, aws_tweetstream
 MAX_TWEETS = 5
 CAPACITY = {'ReadCapacityUnits':5, 'WriteCapacityUnits':5}
 TABLE = 'tweetstream'
-SNS_ARN = 'arn:aws:sns:us-east-1:206027209718:tweetstream-capture'
+SNS_ARN = 'arn:aws:sns:us-east-1:206027209718:tweetstream'
+#SNS_ARN = 'arn:aws:sns:us-east-1:206027209718:tweetstream-capture'
 
 SNS = boto3.client('sns', 'us-east-1',
                    aws_access_key_id=aws_tweetstream['key'],
