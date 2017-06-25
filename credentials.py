@@ -3,19 +3,19 @@
 
 import os
 import yaml
+from globals import CONFIG
 
 import tweepy
 from tweepy import OAuthHandler
 
-__all__ = ['twitter_auth', 'aws_tweetstream']
+__all__ = ['twitter_auth', 'aws_sns']
 
-FILE = os.path.join(os.path.dirname(__file__), 'config.yml')
-CREDENTIALS = yaml.load(open(FILE))
-
-twitter_auth = OAuthHandler(CREDENTIALS['twitter_consumer_key'], CREDENTIALS['twitter_consumer_secret'])
-twitter_auth.set_access_token(CREDENTIALS['twitter_access_token'], CREDENTIALS['twitter_access_secret'])
+twitter_auth = OAuthHandler(CONFIG['twitter_consumer_key'], 
+                            CONFIG['twitter_consumer_secret'])
+twitter_auth.set_access_token(CONFIG['twitter_access_token'], 
+                              CONFIG['twitter_access_secret'])
 
 # api = tweepy.API(auth)
 
-aws_tweetstream = {'key': CREDENTIALS['aws_tweetstream_key'],
-                   'secret': CREDENTIALS['aws_tweetstream_secret']}
+aws_sns = {'key': CONFIG['aws_tweetstream_key'],
+           'secret': CONFIG['aws_tweetstream_secret']}

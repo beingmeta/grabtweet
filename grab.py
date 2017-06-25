@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import os
+import sys
 import json
 import yaml
 import tweepy
@@ -7,21 +8,31 @@ import boto3
 import numbers
 import decimal
 
-from credentials import twitter_auth, aws_tweetstream
+import globals
 
+if len(sys.argv) > 1:
+    MAX_TWEETS = int(sys.argv[1])
+else:
+    MAX_TWEETS=10000
 
-MAX_TWEETS = 5
+#No longer used, replaced by PROFILE
+#TAG_CATEGORY = 'minicooper'
+#TAG_CATEGORY = 'politics'
+#TAG_CATEGORY = 'combo'
+
+from globals import PROFILE, CONFIG
+
+from credentials import twitter_auth, aws_sns
+
 CAPACITY = {'ReadCapacityUnits':5, 'WriteCapacityUnits':5}
 TABLE = 'tweetstream'
-SNS_ARN = 'arn:aws:sns:us-east-1:206027209718:tweetstream'
-#SNS_ARN = 'arn:aws:sns:us-east-1:206027209718:tweetstream-capture'
 
 SNS = boto3.client('sns', 'us-east-1',
-                   aws_access_key_id=aws_tweetstream['key'],
-                   aws_secret_access_key=aws_tweetstream['secret'])
+                   aws_access_key_id=aws_sns['key'],
+                   aws_secret_access_key=aws_sns['secret'])
+SNS_ARN = CONFIG['topic_arn']
 
 TAGS_FILENAME = 'tags.yml'
-TAG_CATEGORY = 'minicooper'
 
 class StopListening (Exception):
     pass
@@ -42,8 +53,13 @@ class TwListener(tweepy.streaming.StreamListener):
     def on_data(self, data_str):
         try:
             data_dict = json.loads(data_str)
-            print('-', self.count, data_dict['id_str'], data_dict['text'][:40])
+            print('-', self.count, data_dict['id_str'], data_dict['text'][:70])
+            if data_dict['lang'] != 'en':
+                print('-', self.count, 'Skipping tweet with lang=', data_dict['lang'])
+                return True
             self.count += 1
+            data_dict['venue']='TWITTER'
+            data_dict['profile']=PROFILE
             self.send_item(data_dict)
             if self.count > MAX_TWEETS:
                 raise StopListening('Time to stop')
@@ -66,7 +82,7 @@ class TwListener(tweepy.streaming.StreamListener):
 def load_tags():
     filename = os.path.join(os.path.dirname(__file__), TAGS_FILENAME)
     tags = yaml.load(open(filename))
-    return tags[TAG_CATEGORY]
+    return tags[PROFILE]
 
 def clean_data(struct):
     '''

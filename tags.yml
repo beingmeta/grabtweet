@@ -1,4 +1,4 @@
-minicooper:
+automotive:
  - f1
  - bmw
  - cat
@@ -69,6 +69,8 @@ minicooper:
  - herofrenchie
  - timomäkinen
  - miniclossover
+ - minicrossover
+ - series5touring
  - serie5touring
  - worldwidemini
  - minicountryman
@@ -81,9 +83,12 @@ minicooper:
  - miniclassicgarage
  - antidotetomeanness
  - minicooperadventures
+politics:
  - healthcare
  - obamacare
  - trumpcare
+ - preexistingcondition
+ - preexisting
  - ACA
  - AHCA
  - deathpanels
@@ -92,10 +97,226 @@ minicooper:
  - pharma
  - bigpharma
  - drugprices
+ - drugs
+ - medicine
+ - republicans
+ - democrats
+ - convervatives
+ - liberals 
  - publicoption
+ - teaparty
+ - senate
+ - congress
+ - whitehouse
+ - WH
+ - POTUS
  - clinton
  - sanders
+ - lyinghillary
  - hillaryclinton
+ - clinton
+ - HRC
+ - BHO
+ - manchester
+ - manchesterbomber
+ - fathermanchesterbomber
+ - fatherofmanchesterbomber
+ - manchesterbombing
  - billclinton
  - donaldtrump
+ - jamescomey
+ - comey
+ - FBI
+ - jeffsessions
+ - sessions
+ - michaelflynn
+ - realdonaldtrump
+ - donaldtrump
+combo:
+ - healthcare
+ - obamacare
+ - trumpcare
+ - preexistingcondition
+ - preexisting
+ - ACA
+ - AHCA
+ - deathpanels
+ - healthinsurance
+ - singlepayer
+ - pharma
+ - bigpharma
+ - drugprices
+ - drugs
+ - medicine
+ - republicans
+ - democrats
+ - convervatives
+ - liberals 
+ - publicoption
  - teaparty
+ - senate
+ - congress
+ - whitehouse
+ - WH
+ - POTUS
+ - clinton
+ - sanders
+ - lyinghillary
+ - hillaryclinton
+ - clinton
+ - HRC
+ - BHO
+ - manchester
+ - manchesterbomber
+ - fathermanchesterbomber
+ - fatherofmanchesterbomber
+ - manchesterbombing
+ - billclinton
+ - donaldtrump
+ - jamescomey
+ - comey
+ - FBI
+ - jeffsessions
+ - sessions
+ - michaelflynn
+ - realdonaldtrump
+ - donaldtrump
+ - f1
+ - bmw
+ - cat
+ - f56
+ - 87rt
+ - mini
+ - bebee
+ - rally
+ - vwbus
+ - wings
+ - jpmini
+ - miniac
+ - miniuk
+ - bmwmini
+ - clubman
+ - coopers
+ - miniday
+ - minifan
+ - minijcw
+ - minimay
+ - miniusa
+ - oldmini
+ - r1200gs
+ - frenchie
+ - miniclub
+ - minicoop
+ - minilife
+ - minilove
+ - roadtrip
+ - minijapan
+ - rovermini
+ - austinmini
+ - coopercult
+ - coopercvlt
+ - countryman
+ - minicabrio
+ - minicooper
+ - minifamily
+ - minimonday
+ - miniracing
+ - motorsport
+ - autocarshow
+ - classiccars
+ - classicmini
+ - convertible
+ - ilovemymini
+ - landcruiser
+ - martinimini
+ - miniclassic
+ - miniclubman
+ - minicoopers
+ - ministagram
+ - orgullomini
+ - streetminis
+ - herofrenchie
+ - miniclossover
+ - minicrossover
+ - series5touring
+ - serie5touring
+ - worldwidemini
+ - minicountryman
+ - johncooperworks
+ - londonmotorshow
+ - miniconvertible
+ - minisofinstagram
+ - classicminicooper
+ - finlandesevolante
+ - miniclassicgarage
+ - minicooperadventures
+minicooper:
+ - f1
+ - bmw
+ - cat
+ - f56
+ - 87rt
+ - mini
+ - bebee
+ - rally
+ - vwbus
+ - wings
+ - jpmini
+ - miniac
+ - miniuk
+ - bmwmini
+ - clubman
+ - coopers
+ - miniday
+ - minifan
+ - minijcw
+ - minimay
+ - miniusa
+ - oldmini
+ - r1200gs
+ - frenchie
+ - miniclub
+ - minicoop
+ - minilife
+ - minilove
+ - roadtrip
+ - minijapan
+ - rovermini
+ - austinmini
+ - coopercult
+ - coopercvlt
+ - countryman
+ - minicabrio
+ - minicooper
+ - minifamily
+ - minimonday
+ - miniracing
+ - motorsport
+ - autocarshow
+ - classiccars
+ - classicmini
+ - convertible
+ - ilovemymini
+ - landcruiser
+ - martinimini
+ - miniclassic
+ - miniclubman
+ - minicoopers
+ - ministagram
+ - orgullomini
+ - streetminis
+ - herofrenchie
+ - miniclossover
+ - minicrossover
+ - series5touring
+ - serie5touring
+ - worldwidemini
+ - minicountryman
+ - johncooperworks
+ - londonmotorshow
+ - miniconvertible
+ - minisofinstagram
+ - classicminicooper
+ - finlandesevolante
+ - miniclassicgarage
+ - minicooperadventures
