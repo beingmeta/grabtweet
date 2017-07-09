@@ -251,21 +251,13 @@ combo:
  - miniclassicgarage
  - minicooperadventures
 minicooper:
- - f1
  - bmw
- - cat
- - f56
- - 87rt
- - mini
- - bebee
- - rally
- - vwbus
- - wings
  - jpmini
  - miniac
  - miniuk
  - bmwmini
  - clubman
+ - paceman
  - coopers
  - miniday
  - minifan
@@ -273,50 +265,178 @@ minicooper:
  - minimay
  - miniusa
  - oldmini
- - r1200gs
- - frenchie
  - miniclub
  - minicoop
  - minilife
  - minilove
- - roadtrip
  - minijapan
  - rovermini
  - austinmini
  - coopercult
- - coopercvlt
  - countryman
  - minicabrio
  - minicooper
  - minifamily
  - minimonday
  - miniracing
- - motorsport
- - autocarshow
- - classiccars
  - classicmini
- - convertible
  - ilovemymini
- - landcruiser
  - martinimini
  - miniclassic
  - miniclubman
  - minicoopers
  - ministagram
- - orgullomini
  - streetminis
- - herofrenchie
- - miniclossover
  - minicrossover
  - series5touring
- - serie5touring
  - worldwidemini
  - minicountryman
  - johncooperworks
- - londonmotorshow
  - miniconvertible
  - minisofinstagram
  - classicminicooper
- - finlandesevolante
  - miniclassicgarage
  - minicooperadventures
+fashion:
+ - fashion
+ - style
+ - jewelry
+ - fashionblogger
+ - fashionista
+ - beauty
+ - vintagejewelry
+ - menswear
+ - sandals
+ - shoes
+ - polo
+ - glamour
+ - fragrance
+ - boho
+ - trendinglifestyle
+ - lifestyle
+ - gorgeous
+ - makeup
+ - fashionweek
+ - handbag
+ - kidsfashion
+ - accessories
+ - earrings
+ - outfit
+ - model
+ - fashionblog
+ - womensjewelry
+ - nike
+ - adidas
+ - dress
+ - blouse
+ - stylish
+ - chic
+ - ecochic
+ - bangle
+ - purse
+ - catwalk
+ - fashiontrends
+ - fashion
+ - jcrew
+ - dolcegabbana
+ - christiandior
+ - collection
+ - chanel
+ - supreme
+ - style
+ - dior
+ - louisvuitton
+ - hilfiger
+ - couture
+ - blouse
+ - skirt
+ - hats
+ - skirts
+ - hat
+ - blouses
+ - vuitton
+ - hermes
+ - oldnavy
+ - sacai
+ - valentino
+ - polkadot
+ - tjmaxx
+ - lamoreèbellezza
+ - vintage
+ - dress
+ - jewelry
+ - fashionista
+ - dresses
+ - shirts
+ - fashionblogger
+ - clothing
+ - beauty
+ - converse
+ - summerfashion
+ - nike
+ - bag
+ - adidas
+ - scoopneck
+ - clothes
+ - palermo
+ - hautecouture
+ - handmade
+ - pariscoutureweek
+ - girls
+ - fancydress
+ - scarf
+ - partydress
+ - usafashion
+ - womendress
+ - tops
+ - designer
+ - etsy
+ - casual
+ - shoes
+ - bags
+ - handbag
+ - gucci
+ - tanda
+ - charley
+ - top
+ - glam
+ - cuecas
+ - altasartoria
+ - lvxsupreme
+ - altamoda
+ - shirt
+ - diva
+ - fragrance
+ - cosme
+ - model
+ - heels
+ - silk
+ - fashionbloggers
+ - shopping
+ - shorts
+ - makeup
+ - menswear
+ - scarves
+ - scarf
+ - tunics
+ - tunic
+ - mode
+ - jual
+ - baju
+ - lamoreebellezza
+ - highfashion
+ - couturedeforce
+ - springcollection
+ - moda
+ - detachedsleeves
+ - sleeveless
+ - suits
+ - pants
+ - socks
+ - jacket
+ - jackets
+ - gowns
+ - gown
+ - ties
+ - tie
+ - handkerchief
