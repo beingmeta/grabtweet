@@ -16,7 +16,7 @@ else:
 if os.getenv("CREDENTIALS"):    
     FILE = os.getenv("CREDENTIALS")
 else:
-    FILE = os.path.join(os.path.dirname(__file__), 'config.yml')
+    FILE = os.path.join(os.path.dirname(__file__), 'config/profiles.yml')
 
 CONFIGS = yaml.load(open(FILE))
 
