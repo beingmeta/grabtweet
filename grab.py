@@ -100,38 +100,11 @@ def clean_data(struct):
 
 def main():
     try:
-        dynamodb_client = boto3.client('dynamodb')
-        set_capacity(dynamodb_client, TABLE, **CAPACITY)
         tags = load_tags()
         twitter_stream = tweepy.Stream(twitter_auth, TwListener())
         twitter_stream.filter(track=tags)
     except StopListening:
         return
-
-def read_capacity(client, table):
-    '''
-    returns current read and write capacity for dynamodb table(:string)
-    '''
-    response = client.describe_table(TableName=table)
-    props = response['Table']['ProvisionedThroughput']
-    return dict((k, props[k]) for k in ['ReadCapacityUnits', 'WriteCapacityUnits'])
-
-
-def set_capacity(client, table, ReadCapacityUnits=5, WriteCapacityUnits=5):
-    '''
-    updates current read and write capacity for dynamodb table
-    '''
-    current = read_capacity(client, table)
-    newval = {}
-    if current['ReadCapacityUnits'] != ReadCapacityUnits:
-        newval['ReadCapacityUnits'] = ReadCapacityUnits
-    if current['WriteCapacityUnits'] != WriteCapacityUnits:
-        newval['WriteCapacityUnits'] = WriteCapacityUnits
-    if newval == {}:
-        print('No updates needed. Current value: {}'.format(current))
-        return
-    print('Updates needed.\n Current value: {},\n new value: {}'.format(current, newval))
-    client.update_table(TableName=table, ProvisionedThroughput=newval)
 
 if __name__ == '__main__':
     main()
