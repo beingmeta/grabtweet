@@ -1,0 +1,2 @@
+#!/bin/sh
+while true; do grab.py 1234 $1 >> $1.log; done
