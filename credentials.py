@@ -19,3 +19,6 @@ twitter_auth.set_access_token(CONFIG['twitter_access_token'],
 
 aws_sns = {'key': CONFIG['aws_tweetstream_key'],
            'secret': CONFIG['aws_tweetstream_secret']}
+
+aws_sqs = {'key': CONFIG['aws_tweetstream_key'],
+           'secret': CONFIG['aws_tweetstream_secret']}
