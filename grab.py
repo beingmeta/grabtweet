@@ -72,6 +72,7 @@ class TwListener(tweepy.streaming.StreamListener):
             raise
         except BaseException as e:
             print('Error on_data: %s' % str(e))
+
         return True
 
     def on_error(self, status):
@@ -79,14 +80,20 @@ class TwListener(tweepy.streaming.StreamListener):
         return True
 
     def send_item(self, item):
-        item_str = json.dumps(clean_data(item), cls=DecimalEncoder)
+
+        try:
+            item_str = json.dumps(clean_data(item), cls=DecimalEncoder)
+        except BaseException as e:
+            print('Error on_json: %s' % str(e))
+
         try:
             SQS.send_message(QueueUrl=SQS_URL,
-                             MessageBody=json.dumps({'default': item_str}, cls=DecimalEncoder))
+                             MessageBody=item_str)
         except StopListening:
             raise
         except BaseException as e:
             print('Error on_post: %s' % str(e))
+
         return True
     
 def load_tags():
