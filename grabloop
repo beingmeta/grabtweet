@@ -1,2 +1,4 @@
 #!/bin/sh
-while true; do grab.py 1234 $1 >> $1.log; done
+PROFILE=$1
+SLEEPFOR=1
+while true; do grab.py 1000 ${PROFILE} >> ${PROFILE}.log; sleep ${SLEEPFOR}; done
