@@ -22,7 +22,7 @@ else:
 
 from globals import PROFILE, CONFIG
 
-from credentials import twitter_auth, aws_sns
+from credentials import twitter_auth, aws_sns, aws_sqs
 
 CAPACITY = {'ReadCapacityUnits':5, 'WriteCapacityUnits':5}
 TABLE = 'tweetstream'
@@ -32,6 +32,11 @@ SNS = boto3.client('sns', 'us-east-1',
                    aws_secret_access_key=aws_sns['secret'])
 SNS_ARN = CONFIG['topic_arn']
 
+SQS = boto3.client('sqs', 'us-east-1',
+                   aws_access_key_id=aws_sqs['key'],
+                   aws_secret_access_key=aws_sqs['secret'])
+SQS_URL = CONFIG['queue_url']
+print( "Queue URL is %s"%SQS_URL)
 TAGS_FILENAME = 'tags.yml'
 
 class StopListening (Exception):
@@ -61,12 +66,13 @@ class TwListener(tweepy.streaming.StreamListener):
             data_dict['venue']='TWITTER'
             data_dict['profile']=PROFILE
             self.send_item(data_dict)
-            if self.count > MAX_TWEETS:
+            if MAX_TWEETS > 0 and self.count > MAX_TWEETS:
                 raise StopListening('Time to stop')
         except StopListening:
             raise
         except BaseException as e:
             print('Error on_data: %s' % str(e))
+
         return True
 
     def on_error(self, status):
@@ -74,10 +80,21 @@ class TwListener(tweepy.streaming.StreamListener):
         return True
 
     def send_item(self, item):
-        item_str = json.dumps(clean_data(item), cls=DecimalEncoder)
-        SNS.publish(TargetArn=SNS_ARN,
-                    Message=json.dumps({'default': item_str}, cls=DecimalEncoder),
-                    MessageStructure='json')
+
+        try:
+            item_str = json.dumps(clean_data(item), cls=DecimalEncoder)
+        except BaseException as e:
+            print('Error on_json: %s' % str(e))
+
+        try:
+            SQS.send_message(QueueUrl=SQS_URL,
+                             MessageBody=item_str)
+        except StopListening:
+            raise
+        except BaseException as e:
+            print('Error on_post: %s' % str(e))
+
+        return True
     
 def load_tags():
     filename = os.path.join(os.path.dirname(__file__), TAGS_FILENAME)

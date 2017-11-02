@@ -1,7 +1,6 @@
 #!/bin/sh
 PROFILE=$1
 SLEEPFOR=1
-COUNT=1
 while true; do
  grab.py 1000 ${PROFILE} > /dev/null; 
  sleep ${SLEEPFOR};
