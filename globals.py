@@ -6,8 +6,8 @@ PROFILE=False
 
 __all__ = ['PROFILE', 'CONFIG']
 
-if len(sys.argv) > 2:
-    PROFILE=sys.argv[2]
+if len(sys.argv) > 1:
+    PROFILE=sys.argv[1]
 elif os.getenv('PROFILE'):
     PROFILE=os.getenv('PROFILE')
 else:

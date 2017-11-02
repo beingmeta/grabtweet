@@ -10,10 +10,10 @@ import decimal
 
 import globals
 
-if len(sys.argv) > 1:
-    MAX_TWEETS = int(sys.argv[1])
+if len(sys.argv) > 2:
+    MAX_TWEETS = int(sys.argv[2])
 else:
-    MAX_TWEETS=10000
+    MAX_TWEETS=-1
 
 #No longer used, replaced by PROFILE
 #TAG_CATEGORY = 'minicooper'

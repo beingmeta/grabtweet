@@ -2,6 +2,6 @@
 PROFILE=$1
 SLEEPFOR=1
 while true; do
- grab.py 1000 ${PROFILE} > /dev/null; 
+ grab.py ${PROFILE} 1000 > /dev/null; 
  sleep ${SLEEPFOR};
 done

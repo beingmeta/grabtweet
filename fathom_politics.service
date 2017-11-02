@@ -1,0 +1,15 @@
+[Unit]
+Description=Listen to the politics profile
+After=syslog.target
+
+[Service]
+Type=simple
+User=fathom
+Group=fathom
+WorkingDirectory=/app/grabtweet
+ExecStart=/app/grabtweet/grab.py politics
+StandardOutput=null
+StandardError=syslog
+
+[Install]
+WantedBy=multi-user.target
