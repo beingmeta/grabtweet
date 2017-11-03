@@ -8,6 +8,7 @@ User=fathom
 Group=fathom
 WorkingDirectory=/app/grabtweet
 ExecStart=/app/grabtweet/grab.py fashion
+Restart=always
 StandardOutput=null
 StandardError=syslog
 
