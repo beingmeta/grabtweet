@@ -1,0 +1,16 @@
+[Unit]
+Description=Listen to the automotive profile on Twitter
+After=syslog.target
+
+[Service]
+Type=simple
+User=fathom
+Group=fathom
+WorkingDirectory=/app/grabtweet
+ExecStart=/usr/bin/python3 /app/grabtweet/grab.py banking
+Restart=always
+StandardOutput=null
+StandardError=syslog
+
+[Install]
+WantedBy=multi-user.target
